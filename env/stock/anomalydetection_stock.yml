@@ -1,0 +1,13 @@
+name: anomalydetection_stock
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9.7
+  - numpy=1.21.2
+  - pip=21.2.4
+  - pip:
+    - tensorflow==2.8.0
+    - protobuf==3.19.6
+    - pandas==1.5.2
+    - scikit-learn==1.1.3

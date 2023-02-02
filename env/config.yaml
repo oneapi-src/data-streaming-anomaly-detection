@@ -1,0 +1,30 @@
+# conf.yaml
+version: 1.0
+
+model: 
+    name: data_anomaly_detection
+    framework: tensorflow
+
+quantization:
+    approach: post_training_static_quant
+
+tuning:
+        accuracy_criterion:
+                relative: 0.05
+                higher_is_better: False
+        exit_policy:
+                timeout: 1000000
+                max_trials : 3000
+
+evaluation:  # optional. required if user doesn't provide eval_func in neural_compressor.Quantization.
+  accuracy:  # optional. required if user doesn't provide eval_func in neural_compressor.Quantization.
+  #metric:
+  #   topk: 1
+  performance: # optional. used to benchmark performance of passing model.
+    configs:
+    #cores_per_instance: 2
+    #num_of_instance: 1
+# quantization: # optional. tuning constraints on model-wise for advance user to reduce tuning space.
+#   calibration:
+#     sampling_size: 200
+
